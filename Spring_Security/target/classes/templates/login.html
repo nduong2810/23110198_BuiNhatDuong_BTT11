@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Login</title>
+</head>
+<body>
+<div style="max-width:420px;margin:40px auto;">
+  <form th:action="@{/login}" method="post">
+    <p>Username / E-mail:
+      <input type="text" name="username" required/>
+    </p>
+    <p>Password:
+      <input type="password" name="password" required/>
+    </p>
+    <p><input type="submit" value="Login"/></p>
+
+    <div th:if="${param.error}" style="color:#b00020;">
+      Đăng nhập thất bại. Kiểm tra lại thông tin.
+    </div>
+    <div th:if="${param.logout}" style="color:green;">
+      Bạn đã đăng xuất.
+    </div>
+  </form>
+</div>
+</body>
+</html>
